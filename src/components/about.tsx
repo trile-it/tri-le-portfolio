@@ -1,12 +1,24 @@
 "use client"
 
 import SectionHeading from "@/components/section-heading";
-import { motion } from "framer-motion";
-import React from 'react';
+import { useActiveSectionContext } from "@/context/active-section-context";
+import { motion, useInView } from "framer-motion";
+import React, { useEffect, useRef } from 'react';
 
 function About() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.75 });
+  const { setActiveSection } = useActiveSectionContext();
+
+  useEffect(() => {
+    if (isInView) {
+      setActiveSection("About");
+    }
+  }, [isInView, setActiveSection]);
+
   return (
     <motion.section
+      ref={ref}
       id="about"
       className="max-w-[45rem] mb-28 sm:mb-40 text-center leading-8 scroll-mt-28"
       initial={{ opacity: 0, y: 100 }}
@@ -33,11 +45,12 @@ function About() {
       </p>
       <p>
         <span className="italic">When I'm not coding</span>, I enjoy playing
-        video games, watching movies, and playing with my dog. I also enjoy{" "}
+                                                           video games, watching movies, and playing with my dog. I also
+                                                           enjoy{" "}
         <span className="font-medium">learning new things</span>. I am currently
-        learning about{" "}
+                                                           learning about{" "}
         <span className="font-medium">history and philosophy</span>. I'm also
-        learning how to play the guitar.
+                                                           learning how to play the guitar.
       </p>
     </motion.section>
   );

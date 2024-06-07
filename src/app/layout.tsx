@@ -1,4 +1,5 @@
 import Header from "@/components/header";
+import ActiveSectionContextProvider from "@/context/active-section-context";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -34,8 +35,11 @@ export default function RootLayout({
           rounded-full
           blur-[10rem]
         "></div>
-        <Header />
-        {children}
+        <ActiveSectionContextProvider>
+          <Header />
+          {children}
+        </ActiveSectionContextProvider>
+
       </body>
     </html>
   );

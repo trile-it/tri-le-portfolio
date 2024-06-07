@@ -1,22 +1,34 @@
 "use client"
 
-import { motion } from 'framer-motion';
+import { useActiveSectionContext } from "@/context/active-section-context";
+import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import Link from "next/link";
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
 
 function Intro() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.5 });
+  const { setActiveSection } = useActiveSectionContext();
+
+  useEffect(() => {
+    if (isInView) {
+      setActiveSection("Home");
+    }
+  }, [isInView, setActiveSection]);
+
   return (
     <section
+      ref={ref}
       id="home"
       className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
     >
       <div className="flex justify-center items-center">
         <div className="relative">
           <motion.div
-            initial={{ opacity: 0, scale: 0}}
+            initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ type: "tween", duration: 0.2 }}
           >
@@ -32,7 +44,7 @@ function Intro() {
           </motion.div>
           <motion.span
             className="absolute bottom-0 right-0 text-4xl"
-            initial={{ opacity: 0, scale: 0}}
+            initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
               type: "spring",
