@@ -2,21 +2,12 @@
 
 import Project from "@/components/project";
 import SectionHeading from "@/components/section-heading";
-import { useActiveSectionContext } from "@/context/active-section-context";
 import { projectsData } from "@/lib/data";
-import { useInView } from "framer-motion";
-import React, { useEffect, useRef } from 'react';
+import { useSectionInView } from "@/lib/hooks";
+import React from 'react';
 
 function Projects() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.5 });
-  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
-
-  useEffect(() => {
-    if (isInView && Date.now() - timeOfLastClick > 1000) {
-      setActiveSection("Projects");
-    }
-  }, [isInView, setActiveSection, timeOfLastClick]);
+  const { ref } = useSectionInView("Projects", 0.5);
 
   return (
     <section ref={ref} id="projects" className="scroll-mt-28">

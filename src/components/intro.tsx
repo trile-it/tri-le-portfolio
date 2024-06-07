@@ -1,23 +1,15 @@
 "use client"
 
-import { useActiveSectionContext } from "@/context/active-section-context";
-import { motion, useInView } from 'framer-motion';
+import { useSectionInView } from "@/lib/hooks";
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from "next/link";
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
 
 function Intro() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.5 });
-  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
-
-  useEffect(() => {
-    if (isInView && Date.now() - timeOfLastClick > 1000) {
-      setActiveSection("Home");
-    }
-  }, [isInView, setActiveSection, timeOfLastClick]);
+  const { ref } = useSectionInView("Home", 0.5);
 
   return (
     <section
