@@ -35,28 +35,44 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Bachelor's degree in Computer Science",
+    location: "National University of Science, Ho Chi Minh City, Vietnam",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+      "I graduated with a Bachelor's Degree in Computer Science. I immediately found a job as a front-end developer.",
     icon: React.createElement(LuGraduationCap),
-    date: "2019",
+    date: "Oct 2013 – Oct 2017",
   },
   {
     title: "Front-End Developer",
-    location: "Orlando, FL",
+    location: "SNA, Ho Chi Minh City, Vietnam",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
+      "I worked as a front-end developer for 2 years in 1 job. I also upskilled to the full stack.",
     icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+    date: "Aug 2018 – Aug 2020",
   },
   {
     title: "Full-Stack Developer",
-    location: "Houston, TX",
+    location: "Zoi GmbH, Ho Chi Minh City, Vietnam",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+      "I worked as a full-stack developer. My stack includes React, Ant Design, AWS S3, GitLab CI/CD, and Localization.",
     icon: React.createElement(FaReact),
-    date: "2021 - present",
+    date: "Sep 2020 – Feb 2022",
+  },
+  {
+    title: "Graduate Certificate in Computer Software Development",
+    location: "Cambrian College, Sudbury, ON, Canada",
+    description:
+      "I pursued higher study and graduated with Honours in Software Development. Relevant courses include Advanced Web Development, Cloud Computing, Software Development Capstone",
+    icon: React.createElement(LuGraduationCap),
+    date: "Jan 2022 – Oct 2022",
+  },
+  {
+    title: "Diploma in Software Engineering Technician",
+    location: "Centennial College, Toronto, ON, Canada",
+    description:
+      "I graduated with another Honours Diploma in Software Engineering. I'm now open to full-time opportunities as a full-stack developer.",
+    icon: React.createElement(LuGraduationCap),
+    date: "Jan 2023 – Aug 2023",
   },
 ] as const;
 
