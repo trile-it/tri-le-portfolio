@@ -7,7 +7,7 @@ import { useSectionInView } from "@/lib/hooks";
 import React from 'react';
 
 function Projects() {
-  const { ref } = useSectionInView("Projects", 0.5);
+  const { ref } = useSectionInView("Projects", 0.3);
 
   return (
     <section ref={ref} id="projects" className="scroll-mt-28">
