@@ -8,13 +8,13 @@ import React, { useEffect, useRef } from 'react';
 function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.75 });
-  const { setActiveSection } = useActiveSectionContext();
+  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
 
   useEffect(() => {
-    if (isInView) {
+    if (isInView && Date.now() - timeOfLastClick > 1000) {
       setActiveSection("About");
     }
-  }, [isInView, setActiveSection]);
+  }, [isInView, setActiveSection, timeOfLastClick]);
 
   return (
     <motion.section

@@ -10,13 +10,13 @@ import React, { useEffect, useRef } from 'react';
 function Projects() {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.5 });
-  const { setActiveSection } = useActiveSectionContext();
+  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
 
   useEffect(() => {
-    if (isInView) {
+    if (isInView && Date.now() - timeOfLastClick > 1000) {
       setActiveSection("Projects");
     }
-  }, [isInView, setActiveSection]);
+  }, [isInView, setActiveSection, timeOfLastClick]);
 
   return (
     <section ref={ref} id="projects" className="scroll-mt-28">
