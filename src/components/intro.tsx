@@ -1,5 +1,6 @@
 "use client"
 
+import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -10,6 +11,10 @@ import { FaGithubSquare } from "react-icons/fa";
 
 function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
+  const {
+    setActiveSection,
+    setTimeOfLastClick
+  } = useActiveSectionContext();
 
   return (
     <section
@@ -79,6 +84,10 @@ function Intro() {
             focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition
             group
           "
+          onClick={() => {
+            setActiveSection("Contact");
+            setTimeOfLastClick(Date.now());
+          }}
         >
           Contact me here <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
