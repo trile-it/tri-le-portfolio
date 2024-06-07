@@ -19,30 +19,31 @@ function About() {
     >
       <SectionHeading>About Me</SectionHeading>
       <p className="mb-3">
-        After graduating with a degree in{" "}
-        <span className="font-medium">Accounting</span>, I decided to pursue my
-        passion for programming. I enrolled in a coding bootcamp and learned{" "}
+        After graduating with a bachelor's degree in{" "}
+        <span className="font-medium">Computer Science</span>, I have held
+        multiple software development roles in different international corporations.
+        My first focus was mobile application development. However, after joining
+        the first web project -
+        <span className="font-medium italic">Smart Sensing Data Analysis</span>{" "}
+        - I decided to pursue my passion in{" "}
         <span className="font-medium">full-stack web development</span>.{" "}
         <span className="italic">My favorite part of programming</span> is the
         problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem. My core stack
-        is{" "}
+        feeling of finally figuring out a solution to a problem and visualizing
+        the solution on the screen. My core stack is{" "}
         <span className="font-medium">
           React, Next.js, Node.js, and MongoDB
         </span>
-        . I am also familiar with TypeScript and Prisma. I am always looking to
+        . I am also familiar with Javascript and TypeScript. I am always looking to
         learn new technologies. I am currently looking for a{" "}
         <span className="font-medium">full-time position</span> as a full-stack
         developer.
       </p>
-      <p>
-        <span className="italic">When I'm not coding</span>, I enjoy playing
-                                                           video games, watching movies, and playing with my dog. I also
-                                                           enjoy{" "}
-        <span className="font-medium">learning new things</span>. I am currently
+      <p className="hidden">
+        <span className="italic">When I'm not coding</span>, I enjoy watching Youtube to{" "}
+        <span className="font-medium">learn new things</span>. I am currently
                                                            learning about{" "}
-        <span className="font-medium">history and philosophy</span>. I'm also
-                                                           learning how to play the guitar.
+        <span className="font-medium">being a part-time Youtuber</span>.
       </p>
     </motion.section>
   );
