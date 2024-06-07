@@ -95,7 +95,7 @@ function Intro() {
         <a className="
           flex items-center gap-2 px-7 py-3
           bg-white
-          rounded-full outline-none border border-black/10
+          rounded-full outline-none borderBlack
           focus:scale-110 hover:scale-110 active:scale-105 transition
           group
           cursor-pointer
@@ -109,7 +109,7 @@ function Intro() {
         <a className="
           flex items-center gap-2 p-4
           text-gray-700 bg-white
-          rounded-full border border-black/10
+          rounded-full borderBlack
           focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition
           cursor-pointer
         "
@@ -123,7 +123,7 @@ function Intro() {
           flex items-center gap-2 p-4
           text-[1.35rem]
           text-gray-700 bg-white
-          rounded-full border border-black/10
+          rounded-full borderBlack
           focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition
           cursor-pointer
         "
