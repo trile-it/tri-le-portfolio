@@ -12,7 +12,7 @@ function About() {
     <motion.section
       ref={ref}
       id="about"
-      className="max-w-[45rem] mb-28 sm:mb-40 text-center leading-8 scroll-mt-28"
+      className="max-w-[45rem] mb-28 sm:mb-32 text-center leading-8 scroll-mt-28"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}

@@ -1,10 +1,10 @@
+import myExpressPortfolio from "@public/myExpressPortfolio.png";
+import myKarcherBusiness from "@public/myKarcherBusiness.png";
+import smartSensingDataAnalysis from "@public/smartSensingDataAnalysis.png";
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@public/corpcomment.png";
-import rmtdevImg from "@public/rmtdev.png";
-import wordanalyticsImg from "@public/wordanalytics.png";
 
 export const links = [
     {
@@ -61,27 +61,33 @@ export const experiencesData = [
 ] as const;
 
 export const projectsData = [
-    {
-        title: "CorpComment",
-        description:
-            "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-        tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-        imageUrl: corpcommentImg,
-    },
-    {
-        title: "rmtDev",
-        description:
-            "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-        tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-        imageUrl: rmtdevImg,
-    },
-    {
-        title: "Word Analytics",
-        description:
-            "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-        tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-        imageUrl: wordanalyticsImg,
-    },
+  {
+    title: "myKärcher Business",
+    description:
+      "I worked as a full-stack developer on this B2B E-commerce project for 2+ years. Business customers can bulk order Kaercher equipments on this site.",
+    projectUrl: "https://business.kaercher.com",
+    demoUrl: "https://youtu.be/G6340Czjc-4",
+    tags: ["React", "Ant Design", "AWS S3", "GitLab CI/CD", "i18next Localization"],
+    imageUrl: myKarcherBusiness,
+  },
+  {
+    title: "Smart Sensing Data Analysis",
+    description:
+      "A web displaying real-time factory data via charts and graphs. I was a front-end developer for 1+ year.",
+    projectUrl: null,
+    demoUrl: "https://youtu.be/BbgtB7zygGA",
+    tags: ["React", "Styled Component", "Redux", "SQL Server"],
+    imageUrl: smartSensingDataAnalysis,
+  },
+  {
+    title: "Express Portfolio",
+    description:
+      "My old portfolio site.",
+    projectUrl: "https://minhtrile-express-portfolio.onrender.com/",
+    demoUrl: null,
+    tags: ["Node", "Express.js", "EJS", "MongoDB"],
+    imageUrl: myExpressPortfolio,
+  },
 ] as const;
 
 export const skillsData = [

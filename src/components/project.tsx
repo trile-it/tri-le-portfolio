@@ -7,7 +7,7 @@ import React, { useRef } from "react";
 
 type ProjectProps = typeof projectsData[number];
 
-function Project({ title, description, tags, imageUrl }: ProjectProps) {
+function Project({ title, description, projectUrl, demoUrl, tags, imageUrl }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -30,7 +30,7 @@ function Project({ title, description, tags, imageUrl }: ProjectProps) {
           relative
           max-w-[42rem]
           sm:h-[20rem]
-          sm:pr-8
+          sm:pr-5
           border border-black/5 rounded-lg
           bg-gray-100
           overflow-hidden
@@ -47,8 +47,29 @@ function Project({ title, description, tags, imageUrl }: ProjectProps) {
           group-even:ml-[18rem]
         "
         >
-          <h3 className="text-2xl font-semibold">{title}</h3>
-          <p className="mt-2 leading-relaxed text-gray-700">{description}</p>
+          <h3 className="text-2xl font-semibold">
+            {projectUrl ? (
+              <a
+                className="underline text-blue-500"
+                href={projectUrl}
+                target="_blank"
+              >
+                {title}
+              </a>
+            ) : title}
+          </h3>
+          <p className="mt-2 leading-relaxed text-gray-700">
+            {description}{" "}
+            {demoUrl ? (
+              <a
+                className="underline italic text-blue-500"
+                href={demoUrl}
+                target="_blank"
+              >
+                Watch Demo
+              </a>
+            ) : null}
+          </p>
           <ul className="flex flex-wrap gap-2 mt-4 sm:mt-auto">
             {tags.map((tag, index) => (
               <li
