@@ -80,7 +80,7 @@ export const projectsData = [
   {
     title: "myKärcher Business",
     description:
-      "I worked as a full-stack developer on this B2B E-commerce project for 2+ years. Business customers can bulk order Kaercher equipments on this site.",
+      "I worked as a full-stack developer on this B2B E-commerce project for 1.5 years. Business customers can bulk order Kaercher equipments on this site.",
     projectUrl: "https://business.kaercher.com",
     demoUrl: "https://youtu.be/G6340Czjc-4",
     tags: ["React", "Ant Design", "AWS S3", "GitLab CI/CD", "i18next Localization"],
@@ -89,7 +89,7 @@ export const projectsData = [
   {
     title: "Smart Sensing Data Analysis",
     description:
-      "A web displaying real-time factory data via charts and graphs. I was a front-end developer for 1+ year.",
+      "A web displaying real-time factory data via charts and graphs. I was a front-end developer for 2 year.",
     projectUrl: null,
     demoUrl: "https://youtu.be/BbgtB7zygGA",
     tags: ["React", "Styled Component", "Redux", "SQL Server"],
