@@ -2,6 +2,7 @@
 
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSectionInView } from "@/lib/hooks";
+import trileProfileImg from "@public/trileProfileImg.jpg";
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from "next/link";
@@ -30,7 +31,7 @@ function Intro() {
             transition={{ type: "tween", duration: 0.2 }}
           >
             <Image
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=368&h=368&q=100"
+              src={trileProfileImg}
               alt="Ricardo portrait"
               width="192"
               height="192"
@@ -59,7 +60,7 @@ function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I'm Trey.</span> I'm a{" "}
+        <span className="font-bold">Hello, I'm Tri Le (Trey).</span> I'm a{" "}
         <span className="font-bold">full-stack developer</span> with{" "}
         <span className="font-bold">3 years</span> of experience. I enjoy building{" "}
         <span className="italic">sites & apps</span>. My focus is{" "}
