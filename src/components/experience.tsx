@@ -3,12 +3,21 @@
 import SectionHeading from "@/components/section-heading";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
 function Experience() {
-  const { ref } = useSectionInView("Experience", 0.3);
+  const { ref, isInView } = useSectionInView("Experience", 0.3);
+  const [firstInView, setFirstInView] = useState(false);
+
+  useEffect(() => {
+    if (!firstInView) {
+      if (isInView) {
+        setFirstInView(true);
+      }
+    }
+  }, [firstInView, isInView]);
 
   return (
     <section
@@ -22,7 +31,7 @@ function Experience() {
           experiencesData.map((item, index) => (
             <React.Fragment key={index}>
               <VerticalTimelineElement
-                visible={true}
+                visible={!firstInView ? isInView : true}
                 contentStyle={{
                   background: "#f3f4f6",
                   boxShadow: "none",

@@ -16,5 +16,6 @@ export function useSectionInView(sectionName: SectionName, amount = 0.75) {
 
   return {
     ref,
+    isInView
   }
 }
