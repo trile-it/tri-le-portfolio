@@ -4,24 +4,18 @@ import SectionHeading from "@/components/section-heading";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import React, { useEffect, useState } from 'react';
-import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+  VerticalTimelineElementProps
+} from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
-function Experience() {
-  const { ref, isInView } = useSectionInView("Experience", 0.3);
-  const [firstInView, setFirstInView] = useState(false);
-
-  useEffect(() => {
-    if (!firstInView) {
-      if (isInView) {
-        setFirstInView(true);
-      }
-    }
-  }, [firstInView, isInView]);
+export default function Experience() {
+  const VTimelineElement = WrappedVerticalTimelineElement(VerticalTimelineElement);
 
   return (
     <section
-      ref={ref}
       id="experience"
       className="scroll-mt-28 mb-28 sm:mb-40"
     >
@@ -30,8 +24,7 @@ function Experience() {
         {
           experiencesData.map((item, index) => (
             <React.Fragment key={index}>
-              <VerticalTimelineElement
-                visible={!firstInView ? isInView : true}
+              <VTimelineElement
                 contentStyle={{
                   background: "#f3f4f6",
                   boxShadow: "none",
@@ -52,7 +45,7 @@ function Experience() {
                 <h3 className="font-semibold capitalize">{item.title}</h3>
                 <p className="font-normal !mt-0">{item.location}</p>
                 <p className="!mt-1 !font-normal text-gray-700">{item.description}</p>
-              </VerticalTimelineElement>
+              </VTimelineElement>
             </React.Fragment>
           ))
         }
@@ -61,4 +54,32 @@ function Experience() {
   );
 }
 
-export default Experience;
+type WrappedVerticalTimelineElementProps = {
+  children: React.ReactNode,
+} & VerticalTimelineElementProps;
+
+// By default, there is some errors that make VerticalTimelineElement hidden
+// Rather than using one useSectionInView hook in Experience Component above and show all the Timeline Elements at once
+// Each Wrapped Component will handle its visibility independently when it is in view
+const WrappedVerticalTimelineElement = (VerticalTimelineElm: typeof VerticalTimelineElement) =>
+  function AutoVisibleVerticalTimelineElement({ children, ...props }: WrappedVerticalTimelineElementProps) {
+    const { ref, isInView } = useSectionInView("Experience", 0.3);
+    const [firstInView, setFirstInView] = useState(false);
+
+    useEffect(() => {
+      if (!firstInView && isInView) {
+        setFirstInView(true);
+      }
+    }, [firstInView, isInView]);
+
+    return (
+      <VerticalTimelineElm
+        visible={firstInView} // After being in view the first time, always be visible subsequently
+        {...props}
+      >
+        <div ref={ref}>
+          {children}
+        </div>
+      </VerticalTimelineElm>
+    )
+  }
