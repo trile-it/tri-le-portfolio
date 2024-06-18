@@ -92,7 +92,7 @@ export const projectsData = [
       "A web displaying real-time factory data via charts and graphs. I was a front-end developer for 2 year.",
     projectUrl: null,
     demoUrl: "https://youtu.be/BbgtB7zygGA",
-    tags: ["React", "Styled Component", "Redux", "SQL Server"],
+    tags: ["React", "Styled-Components", "Redux", "SQL Server"],
     imageUrl: smartSensingDataAnalysis,
   },
   {
