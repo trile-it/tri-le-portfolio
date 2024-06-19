@@ -1,5 +1,6 @@
 "use client"
 
+import { sendEmail } from "@/actions/sendEmail";
 import SectionHeading from "@/components/section-heading";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
@@ -29,15 +30,30 @@ function Contact() {
           minhtrile.it@gmail.com
         </a>{" "} or through this form.
       </p>
-      <form className="flex flex-col mt-10">
+      <form
+        className="flex flex-col mt-10"
+        action={async (formData) => {
+          console.log("Running on client");
+          console.log(formData.get("senderEmail"));
+          console.log(formData.get("message"));
+
+          await sendEmail(formData);
+        }}
+      >
         <input
           className="h-14 px-4 rounded-lg borderBlack"
+          name="senderEmail"
           type="email"
           placeholder="Your email"
+          required
+          maxLength={500}
         />
         <textarea
           className="h-52 my-3 p-4 rounded-lg borderBlack"
+          name="message"
           placeholder="Your message"
+          required
+          maxLength={500}
         />
         <button
           className="
