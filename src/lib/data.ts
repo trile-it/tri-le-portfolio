@@ -48,7 +48,7 @@ export const experiencesData = [
     description:
       "I worked as a front-end developer for 2 years in 1 job. I also upskilled to the full stack.",
     icon: React.createElement(CgWorkAlt),
-    date: "Aug 2018 – Aug 2020",
+    date: "Aug 2018 – Jul 2020",
   },
   {
     title: "Full-Stack Developer",
@@ -92,7 +92,7 @@ export const projectsData = [
       "A web displaying real-time factory data via charts and graphs. I was a front-end developer for 2 year.",
     projectUrl: null,
     demoUrl: "https://youtu.be/BbgtB7zygGA",
-    tags: ["React", "Styled-Components", "Redux", "SQL Server"],
+    tags: ["React", "Styled-Components", "Redux", "Chart.js", "SQL Server"],
     imageUrl: smartSensingDataAnalysis,
   },
   {
